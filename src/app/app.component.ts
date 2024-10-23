@@ -12,7 +12,6 @@ import { AboutComponent } from './components/about/about.component';
 import { TourDetailsComponent } from './components/tours/tour-details/tour-details.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-declare var ScrollReveal: any;
 
 @Component({
   selector: 'app-root',
@@ -48,36 +47,6 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-
-        this.applyScrollReveal();
-      }
-    });
-  }
-
-  applyScrollReveal() {
-    ScrollReveal().reveal('.scrollbutton', {
-      duration: 1500,
-      origin: 'bottom',
-      distance: '50px',
-    });
-    ScrollReveal().reveal('.scrollright', {
-      duration: 1500,
-      origin: 'right',
-      distance: '50px',
-    });
-    ScrollReveal().reveal('.scrollleft', {
-      duration: 1500,
-      origin: 'left',
-      distance: '50px',
-    });
-    ScrollReveal().reveal('.scroll-with-rotation', {
-      duration: 1500,
-      rotate: { x:0, y: 80, z: 0 },
-      distance: '50px'
-    });
   }
 }
 //////////////////////////////////////////////////////////
